@@ -59,19 +59,19 @@ dockerPull() {
 
 cloneSamplesRepo() {
     # clone (if needed) hyperledger/fabric-samples and checkout corresponding
-	//克隆（如果需要）hyperledger / fabric-samples和结帐对应
+	# 克隆（如果需要）hyperledger / fabric-samples和结帐对应
     # version to the binaries and docker images to be downloaded
-	//版本要下载的二进制文件和docker映像
+	# 版本要下载的二进制文件和docker映像
     if [ -d first-network ]; then
         # if we are in the fabric-samples repo, checkout corresponding version
-		//如果我们在fabric-samples回购中，请签出相应的版本
+		# 如果我们在fabric-samples回购中，请签出相应的版本
         echo "===> Checking out v${VERSION} of hyperledger/fabric-samples"
         git checkout v${VERSION}
     elif [ -d fabric-samples ]; then
         # if fabric-samples repo already cloned and in current directory,
-		//如果fabric-samples存储库已经克隆并且在当前目录中，
+		# 如果fabric-samples存储库已经克隆并且在当前目录中，
         # cd fabric-samples and checkout corresponding version
-		//cd fabric-samples和检出对应的版本
+		# cd fabric-samples和检出对应的版本
         echo "===> Checking out v${VERSION} of hyperledger/fabric-samples"
         cd fabric-samples && git checkout v${VERSION}
     else
